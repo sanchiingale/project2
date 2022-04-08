@@ -38,8 +38,8 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: sanchicontainerregistry.azurecr.io
-          username: ${{ secrets.REGI_USERNAME }}
-          password: ${{ secrets.REGI_PASSWORD }}
+          username: ${{ secrets.REG_USERNAME }}
+          password: ${{ secrets.REG_PASSWORD }}
 
       - name: Docker build and Push
         run: |
