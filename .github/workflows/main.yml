@@ -34,7 +34,17 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
+      - name: ACR login
+        uses: azure/docker-login@v1
+        with:
+          login-server: sanchicontainerregistry.azurecr.io
+          username: ${{ secrets.REGI_USERNAME }}
+          password: ${{ secrets.REGI_PASSWORD }}
 
+      - name: Docker build and Push
+        run: |
+            docker build . -t sanchicontainerregistry.azurecr.io/image1:latest
+            docker push  sanchicontainerregistry.azurecr.io/image1:latest
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
