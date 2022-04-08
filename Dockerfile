@@ -1,7 +1,4 @@
-FROM openjdk:16-alpine3.13
-WORKDIR /project2
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY src ./src
-CMD ["./mvnw", "spring-boot:run"]
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE= target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
