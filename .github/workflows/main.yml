@@ -39,15 +39,14 @@ jobs:
       - name: ACR login
         uses: azure/docker-login@v1
         with:
-          login-server: sanchicontainerregistry.azurecr.io
-          username: sanchicontainerregistry
-          password: 5giC=je0mCi5e5oCVSrdiAt4syrSFRsK
+          login-server: sanchicontainerregi0802.azurecr.io
+          username: sanchicontainerregi0802
+          password: GSpf92KnMXl86uv16B+oEjp2ipAyJpwk
 
       - name: Docker build and Push
         run: |
-            docker build . -t sanchicontainerregistry.azurecr.io/image1:latest
-            docker push  sanchicontainerregistry.azurecr.io/image1:latest
-
+            docker build . -t sanchicontainerregi0802.azurecr.io/image1:latest
+            docker push  sanchicontainerregi0802.azurecr.io/image1:latest
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
