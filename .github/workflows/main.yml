@@ -41,12 +41,12 @@ jobs:
         with:
           login-server: sanchicontainerregi0802.azurecr.io
           username: sanchicontainerregi0802
-          password: GSpf92KnMXl86uv16B+oEjp2ipAyJpwk
+          password: 4hpQ9uvf8/PJL4Ip1CHLInMq0mQm7GGn
 
       - name: Docker build and Push
         run: |
-            docker build . -t sanchicontainerregi0802.azurecr.io/image1:latest
-            docker push  sanchicontainerregi0802.azurecr.io/image1:latest
+            docker build . -t sanchicontainerregi0802.azurecr.io/dockerimage1:latest
+            docker push  sanchicontainerregi0802.azurecr.io/dockerimage1:latest
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
